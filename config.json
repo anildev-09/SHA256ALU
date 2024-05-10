@@ -1,0 +1,4 @@
+{
+  "DESIGN_NAME": "sha256",
+  "VERILOG_FILES": ["dir::sha256.v","dir::sha256_core.v", "dir::sha256_k_constants.v", "dir::sha256_w_mem.v"]
+}
