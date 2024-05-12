@@ -19,7 +19,7 @@ Follow OpenLane2 documentation : https://openlane2.readthedocs.io/en/latest/gett
 - sudo nix-shell --pure ~/openlane2/shell.nix  (It will take a long time )
 - mkdir -p ~/my_designs
 - cd ~/my_designs/
-- /bin/git clone https://github.com/altinvolkan/SHA256ALU.git
+- /bin/git clone https://github.com/anildev-09/SHA256ALU.git
 - cd SHA256ALU/
 - openlane -p sky130A ~/my_designs/SHA256ALU/config.json
   
