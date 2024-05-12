@@ -9,7 +9,7 @@ Follow OpenLane2 documentation : https://openlane2.readthedocs.io/en/latest/gett
 
 - sudo apt-get update
 - sudo apt-get upgrade
-- git clone https://github.com/efabless/openlane2/ 
+- git clone https://github.com/efabless/openlane2/  && cd openlane2
 - sudo apt install make
 - sudo apt install python3-pip
 - sudo apt install python3.10-venv
