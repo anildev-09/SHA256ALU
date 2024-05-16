@@ -1,58 +1,3 @@
-# SHA256ALU - Bir OpenLane2 projesi
-
-Bu proje Efabless tarafından OpenLane2 için bir test projesidir. Yapılandırma dosyasını olabildiğince basit tutuyoruz. Bu proje nix-terminal adı verilen farklı bir konteyner yönteminde çalışır. Çalıştırmak için WSL ve bazı ince ayarlar kullandık. PDK_ROOT veya OPENLANE_ROOT'u bulamıyoruz ama buna ihtiyacımız yok. Başlangıçta projeyi çalıştırmak için "openlane --pdk sky130A ~/my_designs/sha256_project/config.json" gibi bir komut kullanıyoruz.  PDK kökü için --pdk sky130A yeterlidir. Ayrıca bu projeyi çalıştırmak için başka dosyalara da ihtiyacımız var. Güzel SHA-256 algoritması için @secworks'e özel teşekkürler. "https://github.com/secworks/sha256/tree/master" adresinde bulunabilir.
-
-Ayrıca, bu projeyi yapmamız için bize ilham veren öğretmenimiz Sezen B.'ye özel teşekkürler. Bu projenin başından beri tüm ekibin saçları "bi tık" azaldı.
-Adımlar :
-
-OpenLane2 dokümantasyonunu takip edin : https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html 
-
-- sudo apt-get update
-- sudo apt-get upgrade
-- git clone https://github.com/efabless/openlane2/ && cd openlane2
-- sudo apt install make
-- sudo apt install python3-pip
-- sudo apt install python3.10-venv
-- sudo apt install make 
-- sudo apt install nix-bin
-- sudo make
-- sudo nix-shell --pure ~/openlane2/shell.nix (Uzun zaman alacaktır)
-- mkdir -p ~/my_designs
-- cd ~/my_designs/
-- /bin/git clone https://github.com/anildev-09/SHA256ALU.git
-- cd SHA256ALU/
-- openlane -p sky130A ~/my_designs/SHA256ALU/config.json
-  
-
-Kurulumunuzu test etmek istiyorsanız şu komutu kullanabilirsiniz: openlane --log-level ERROR --condensed --show-progress-bar --smoke-test
-
-Linux'ta herhangi bir işlemi "Control + C" komutu ile iptal edebilirsiniz. Bazen birkaç kez denemeniz gerekebilir. 
-
-////////////////"İpucu"\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-İki kez kontrol et : bir "nix-shell" modunda mısınız? 
-
-Eğer değilse, terminalinize aşağıdaki komutu girin:
-
-nix-shell --pure ~/openlane2/shell.nix" 
-//////////////(Dokümantasyon - Varsayılan akış PM32 Örneğini çalıştırma)\\\\\\\\\\\\\\\\\\\\
-
-
-openlane -p sky130A ~/my_designs/SHA256ALU/config.json
-
-"ls" komutu ile dosya ve klasörlere bakabilirsiniz. Baktığınızda "runs" klasörünü görebilirsiniz. "cd runs" komutu ile bu klasöre gidebilirsiniz ve yine "ls" komutunu kullanırsınız. Lütfen klasörleri iyi inceleyin. İhtiyacınız olan her şey var (kat planları, klayout, openroad vb.). Hepsi bu kadar! Tüm işlemi tamamladınız!
-
-
-"Ctrl+X" kombinasyonu ile nano'dan çıkabilirsiniz. Dosyaya kaydetmek isteyecektir, "Y" tuşuna basabilirsiniz. 
-Tekrarlayın! 
-
-
-
-
-----NERD STUFF----
-
-+Bu da ne? PDK'yı neden komut olarak belirttin? Neden? 
--Çünkü verilog veya json yapısını bilmiyorum ve tüm belgeleri okumak için çok tembeliz. Diğer projeleri kontrol ettik, LLM kullandım ve sonunda belgeleri okudum (biraz). Minimum yapılandırmada kullanmamız gereken 4 değişken var. Ama openlane2 çok akıllı. Otomatik olarak tanımlayabiliyor. Ancak PDK'yı tanımlamak için openlane ve PDK klasör konumunu bulmak gerekiyor. Bu docker benzeri bir konteyner projesidir ve bu dosyanın konumunu tanımlamanız gerekir. Ama siz onun içinde çalışıyorsunuz. Dizini bulamıyorum. Eğer bulursanız, lütfen bana söyleyin.
 
 
 
@@ -113,3 +58,61 @@ Repeat!
 ----NERD STUFF----
 
 +What the hell? You've selected PDK at command? Why? -Cuz' I don't know verilog or json structure and I'm too lazy to read the whole documentation. I've checked other projects, used LLM and finally read the documentation (a little bit). There's 4 variables we must use in minimum configuration. But openlane2 is too smart. It can define it automaticly. But defining PDK needs to find openlane and PDK folder location. This is docker-like container project and you must define the location of this file. But you are running inside of it. I can't find the directory. If you find, please tell me.
+
+
+# SHA256ALU - Bir OpenLane2 projesi
+
+Bu proje Efabless tarafından OpenLane2 için bir test projesidir. Yapılandırma dosyasını olabildiğince basit tutuyoruz. Bu proje nix-terminal adı verilen farklı bir konteyner yönteminde çalışır. Çalıştırmak için WSL ve bazı ince ayarlar kullandık. PDK_ROOT veya OPENLANE_ROOT'u bulamıyoruz ama buna ihtiyacımız yok. Başlangıçta projeyi çalıştırmak için "openlane --pdk sky130A ~/my_designs/sha256_project/config.json" gibi bir komut kullanıyoruz.  PDK kökü için --pdk sky130A yeterlidir. Ayrıca bu projeyi çalıştırmak için başka dosyalara da ihtiyacımız var. Güzel SHA-256 algoritması için @secworks'e özel teşekkürler. "https://github.com/secworks/sha256/tree/master" adresinde bulunabilir.
+
+Ayrıca, bu projeyi yapmamız için bize ilham veren öğretmenimiz Sezen B.'ye özel teşekkürler. Bu projenin başından beri tüm ekibin saçları "bi tık" azaldı.
+Adımlar :
+
+OpenLane2 dokümantasyonunu takip edin : https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html 
+
+- sudo apt-get update
+- sudo apt-get upgrade
+- git clone https://github.com/efabless/openlane2/ && cd openlane2
+- sudo apt install make
+- sudo apt install python3-pip
+- sudo apt install python3.10-venv
+- sudo apt install make 
+- sudo apt install nix-bin
+- sudo make
+- sudo nix-shell --pure ~/openlane2/shell.nix (Uzun zaman alacaktır)
+- mkdir -p ~/my_designs
+- cd ~/my_designs/
+- /bin/git clone https://github.com/anildev-09/SHA256ALU.git
+- cd SHA256ALU/
+- openlane -p sky130A ~/my_designs/SHA256ALU/config.json
+  
+
+Kurulumunuzu test etmek istiyorsanız şu komutu kullanabilirsiniz: openlane --log-level ERROR --condensed --show-progress-bar --smoke-test
+
+Linux'ta herhangi bir işlemi "Control + C" komutu ile iptal edebilirsiniz. Bazen birkaç kez denemeniz gerekebilir. 
+
+////////////////"İpucu"\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+İki kez kontrol et : bir "nix-shell" modunda mısınız? 
+
+Eğer değilse, terminalinize aşağıdaki komutu girin:
+
+nix-shell --pure ~/openlane2/shell.nix" 
+//////////////(Dokümantasyon - Varsayılan akış PM32 Örneğini çalıştırma)\\\\\\\\\\\\\\\\\\\\
+
+
+openlane -p sky130A ~/my_designs/SHA256ALU/config.json
+
+"ls" komutu ile dosya ve klasörlere bakabilirsiniz. Baktığınızda "runs" klasörünü görebilirsiniz. "cd runs" komutu ile bu klasöre gidebilirsiniz ve yine "ls" komutunu kullanırsınız. Lütfen klasörleri iyi inceleyin. İhtiyacınız olan her şey var (kat planları, klayout, openroad vb.). Hepsi bu kadar! Tüm işlemi tamamladınız!
+
+
+"Ctrl+X" kombinasyonu ile nano'dan çıkabilirsiniz. Dosyaya kaydetmek isteyecektir, "Y" tuşuna basabilirsiniz. 
+Tekrarlayın! 
+
+
+
+
+----NERD STUFF----
+
++Bu da ne? PDK'yı neden komut olarak belirttin? Neden? 
+-Çünkü verilog veya json yapısını bilmiyorum ve tüm belgeleri okumak için çok tembeliz. Diğer projeleri kontrol ettik, LLM kullandım ve sonunda belgeleri okudum (biraz). Minimum yapılandırmada kullanmamız gereken 4 değişken var. Ama openlane2 çok akıllı. Otomatik olarak tanımlayabiliyor. Ancak PDK'yı tanımlamak için openlane ve PDK klasör konumunu bulmak gerekiyor. Bu docker benzeri bir konteyner projesidir ve bu dosyanın konumunu tanımlamanız gerekir. Ama siz onun içinde çalışıyorsunuz. Dizini bulamıyorum. Eğer bulursanız, lütfen bana söyleyin.
+
