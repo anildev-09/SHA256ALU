@@ -11,7 +11,7 @@ This project is a test project for OpenLane2 by Efabless. We keep the configurat
 Also, special thanks to our teacher Sezen B., who inspired us to do this project. The whole team has less hair since the beginning of this project (Feels great and comfortable :))
 Steps :
 
-Follow OpenLane2 documentation : https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html 
+Follow OpenLane2 documentation : https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html (optional for additional functions and bugfixes, you dont have to do anything if you don't encounter any issues with the commands below.)
 
 - sudo apt-get update
 - sudo apt-get upgrade
@@ -67,7 +67,7 @@ Bu proje Efabless tarafından OpenLane2 için bir test projesidir. Yapılandırm
 Ayrıca, bu projeyi yapmamız için bize ilham veren öğretmenimiz Sezen B.'ye özel teşekkürler. Bu projenin başından beri tüm ekibin saçları "bi tık" azaldı.
 Adımlar :
 
-OpenLane2 dokümantasyonunu takip edin : https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html 
+OpenLane2 dokümantasyonunu görüntüleyin: https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html(ek işlevler ve hata düzeltmeleri için isteğe bağlı olarak görüntülenebilir, komutlarla herhangi bir sorunla karşılaşmazsanız hiçbir şey (aşağıdaki komutlarla) yapmanıza gerek yoktur.)
 
 - sudo apt-get update
 - sudo apt-get upgrade
