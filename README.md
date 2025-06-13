@@ -7,7 +7,9 @@
 # SHA256ALU - An OpenLane2 project
 
 This project is a test project for OpenLane2 by Efabless. We keep the configuration file as simple as possible. This project runs in a different container method called nix-terminal. We used WSL and some tweaks to run it. We can't find the PDK_ROOT or OPENLANE_ROOT but we dont need it. We use command like "openlane --pdk sky130A ~/my_designs/sha256_project/config.json" for running the project at the start.  --pdk sky130A is enough for PDK root. Also we need other files for run this project. Special thanks to @secworks for beautiful SHA-256 algorhythm. It can be found at "https://github.com/secworks/sha256/tree/master"
+
 We also have implemented i2c master onto our chip: https://github.com/altinvolkan/i2cALU
+
 Also, special thanks to our teacher Sezen B., who inspired us to do this project. The whole team has less hair since the beginning of this project (Feels great and comfortable :))
 Steps :
 
@@ -63,7 +65,9 @@ Repeat!
 # SHA256ALU - Bir OpenLane2 projesi
 
 Bu proje Efabless tarafından OpenLane2 için bir test projesidir. Yapılandırma dosyasını olabildiğince basit tutuyoruz. Bu proje nix-terminal adı verilen farklı bir konteyner yönteminde çalışır. Çalıştırmak için WSL ve bazı ince ayarlar kullandık. PDK_ROOT veya OPENLANE_ROOT'u bulamıyoruz ama buna ihtiyacımız yok. Başlangıçta projeyi çalıştırmak için "openlane --pdk sky130A ~/my_designs/sha256_project/config.json" gibi bir komut kullanıyoruz.  PDK kökü için --pdk sky130A yeterlidir. Ayrıca bu projeyi çalıştırmak için başka dosyalara da ihtiyacımız var. Güzel SHA-256 algoritması için @secworks'e özel teşekkürler. "https://github.com/secworks/sha256/tree/master" adresinde bulunabilir.
+
 Projemize i2c master'ı da ekledik: https://github.com/altinvolkan/i2cALU
+
 Ayrıca, bu projeyi yapmamız için bize ilham veren öğretmenimiz Sezen B.'ye özel teşekkürler. Bu projenin başından beri tüm ekibin saçları "bi tık" azaldı.
 Adımlar :
 
